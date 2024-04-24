@@ -54,19 +54,19 @@ Response: { "_id": "string", "name": "string", "email": "string" } etc.
 
 Endpoint: GET /courses
 Description: Fetches courses available on the platform with optional filtering and pagination.
-Request Body (Optional): // apply filters
-{
-    "course": "",
-    "level": "", // beginner, intermidiate, advanced
-    "category": "", //like "web developer", "app developer", "DevOps"     
-    "location" : "", // online, offline, mumbai, kerla, pune etc.
-    "language": "",
-    "duration": "",
-    "freeOrPaid": "", // set the value free or paid as you want,
-    "provider": "",
-    "popularity": ""
-}
-Query Parameters: page=1 or page=2 whatever...
+Query Parameters (Optional): // apply filters
+
+    title = node, javaScript,
+    level = beginner , // beginner, intermidiate, advanced
+    category = programming , //like web developer, app developer, DevOps     
+    location = online , // online, offline, mumbai, kerla, pune etc.
+    language = hindi, english,
+    duration = 6 month ,
+    freeOrPaid = free, // set the value free or paid as you want,
+    provider = udemy etc ,
+    popularity = 2, 3 etc
+    page = 2, 3 like that 
+
 Response: Array of course objects
 
 
@@ -120,10 +120,9 @@ Response: { "success": true, "message": "Course created successfully..." }
 
 - get a course
 
-GET /super-admin/course/:id (Get a course details)
-Query params: give the course id. 
+GET /super-admin/course (Get a course details)
+Query prameters: give the course id. like id=lksafhor4r3iu4yskjdh
 Response: { "success": true, course: [{}] or {} }
-
 
 - update course
 
@@ -151,7 +150,7 @@ Response: { "success": true, "message": "Course updated successfully..." }
 - delete course
 
 DELETE /super-admin/course/delete (Delete a course)
-Request Body: { "_id": "String" }
+Query parameters : _id=lsakdfo439rhado394ydjk like that.
 Response: { "success": true, "message": "Course deleted successfully..." }
 
 Description: Superadmin users can perform CRUD operations on courses.
@@ -181,4 +180,5 @@ npm run start
 And you will see this in the terminal
 
 server running at http://localhost:3000
+Go to api doc http://localhost:3000/api-docs
 connected to mongodb

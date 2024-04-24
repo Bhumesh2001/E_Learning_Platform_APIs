@@ -28,9 +28,9 @@ exports.authorizeToUser = async (req, res, next) => {
         };
     } catch (error) {
         if (error.name === 'TokenExpiredError') {
-            res.status(401).json({ message: 'Your Session has expired, please login.' });
+            res.status(419).json({ message: 'Your Session has expired, please login.' });
         } else if (error.name === 'JsonWebTokenError') {
-            res.status(401).json({ message: 'Invalid token, please log in again.' });
+            res.status(498).json({ message: 'Invalid token, please log in again.' });
         } else {
             res.status(500).json({ message: 'Internal Server Error', error });
         };
