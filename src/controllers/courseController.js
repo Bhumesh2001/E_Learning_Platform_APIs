@@ -202,6 +202,9 @@ exports.createCourse = async (req, res) => {
  *           name: level
  *           description: biginner, intermidiate, advanced
  *         - in: query
+ *           name: category
+ *           description: like web developement, mobile development, app, programming
+ *         - in: query
  *           name: location
  *           description: online, mumbai, pune
  *         - in: query
