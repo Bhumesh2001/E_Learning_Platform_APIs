@@ -35,7 +35,6 @@ const db = mongoose.connection;
 db.on('connected', () => {
     console.log('connected to mongodb');
 });
-
 db.on('error', (err) => {
     console.log('connection error:', err);
 });
@@ -43,10 +42,6 @@ db.on('error', (err) => {
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 app.use('/user', userRoutes);
 app.use('/', superAdminRoutes);
-
-app.get('/home', (req, res) => {
-    res.send('hello from the server');
-});
 
 app.listen(PORT, () => {
     console.log(`server running at http://localhost:${process.env.PORT}`);
