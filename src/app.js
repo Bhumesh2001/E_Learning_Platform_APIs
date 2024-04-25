@@ -18,7 +18,7 @@ const options = {
         },
         servers: [
             {
-                url: `http://localhost:${PORT}`,
+                url: `http://localhost:${process.env.PORT}`,
             }
         ],
     },
@@ -44,7 +44,11 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 app.use('/user', userRoutes);
 app.use('/', superAdminRoutes);
 
+app.get('/home', (req, res) => {
+    res.send('hello from the server');
+});
+
 app.listen(PORT, () => {
-    console.log(`server running at http://localhost:${PORT}`);
-    console.log(`Go to api doc http://localhost:${PORT}/api-docs`);
+    console.log(`server running at http://localhost:${process.env.PORT}`);
+    console.log(`Go to api doc http://localhost:${process.env.PORT}/api-docs`);
 });
