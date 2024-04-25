@@ -44,7 +44,7 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 app.use('/user', userRoutes);
 app.use('/', superAdminRoutes);
 
-app.get('/', (req, res) => {
+app.get('/home', (req, res) => {
     res.send('hello from the server');
 });
 
