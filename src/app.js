@@ -18,7 +18,7 @@ const options = {
         },
         servers: [
             {
-                url: `http://localhost:${process.env.PORT}`,
+                url: `http://localhost:${PORT}`,
             }
         ],
     },
@@ -44,6 +44,6 @@ app.use('/user', userRoutes);
 app.use('/', superAdminRoutes);
 
 app.listen(PORT, () => {
-    console.log(`server running at http://localhost:${process.env.PORT}`);
-    console.log(`Go to api doc http://localhost:${process.env.PORT}/api-docs`);
+    console.log(`server running at http://localhost:${PORT}`);
+    console.log(`Go to api doc http://localhost:${PORT}/api-docs`);
 });
