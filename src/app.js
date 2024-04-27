@@ -39,6 +39,10 @@ db.on('error', (err) => {
     console.log('connection error:', err);
 });
 
+app.get('/', (req, res)=>{
+    res.send('hello world')
+});
+
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 app.use('/user', userRoutes);
 app.use('/', superAdminRoutes);
