@@ -31,7 +31,7 @@ app.use(cookieParser());
 
 mongoose.connect(process.env.dbURI);
 const db = mongoose.connection;
-
+    
 db.on('connected', () => {
     console.log('connected to mongodb');
 });
