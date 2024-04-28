@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const cookieParser = require('cookie-parser');
 const swaggerJsdoc = require('swagger-jsdoc');
 const swaggerUi = require('swagger-ui-express');
+const bodyParser = require('body-parser');
 const app = express();
 const PORT = process.env.PORT;
 const userRoutes = require('./routes/userRoute');
@@ -27,6 +28,8 @@ const options = {
 const swaggerSpec = swaggerJsdoc(options);
 
 app.use(express.json());
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 mongoose.connect(process.env.dbURI);
